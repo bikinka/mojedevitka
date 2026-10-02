@@ -1,0 +1,2494 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background: #f7f5f1;
+  color: #1c1b19;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ========================================
+   STRÁNKA
+======================================== */
+
+.page {
+  width: calc(100% - 48px);
+  max-width: 1180px;
+
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #ded9d1;
+}
+
+.site-logo {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.site-credit {
+  color: #777168;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  position: relative;
+
+  min-height: 330px;
+
+  padding: 70px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.hero-text {
+  position: relative;
+
+  z-index: 5;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-text h1 {
+  max-width: 680px;
+
+  margin: 0 0 18px;
+
+  font-size: clamp(44px, 5vw, 70px);
+  line-height: 0.98;
+
+  letter-spacing: -3px;
+}
+
+.hero-text p {
+  max-width: 550px;
+
+  margin: 0;
+
+  color: #6d665e;
+
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+
+/* ========================================
+   CÍVKA
+======================================== */
+
+.reel-scene {
+  position: relative;
+
+  width: 310px;
+  height: 250px;
+
+  flex: 0 0 310px;
+}
+
+.film-reel {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 0;
+  right: 15px;
+
+  width: 215px;
+  height: 215px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 38% 30%,
+      #4b4944 0%,
+      #2b2a27 45%,
+      #171715 100%
+    );
+
+  border: 3px solid #252421;
+
+  box-shadow:
+    0 18px 35px rgba(40,35,28,0.18),
+    inset 0 0 0 5px #3a3935,
+    inset 0 0 0 7px #1e1e1c;
+
+  transform: rotate(-9deg);
+
+  cursor: grab;
+
+  user-select: none;
+  touch-action: none;
+}
+
+.film-reel:active {
+  cursor: grabbing;
+}
+
+.film-reel::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 17px;
+
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 50%;
+}
+
+.film-reel::after {
+  content: "";
+
+  position: absolute;
+
+  top: 20px;
+  left: 42px;
+
+  width: 90px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.055);
+
+  transform: rotate(-25deg);
+
+  filter: blur(4px);
+}
+
+
+/* ========================================
+   OTVORY
+======================================== */
+
+.reel-hole {
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #f7f5f1;
+
+  border: 4px solid #191917;
+
+  box-shadow:
+    inset 0 3px 7px rgba(0,0,0,0.16);
+}
+
+.hole-1 {
+  top: 22px;
+  left: 80px;
+}
+
+.hole-2 {
+  top: 69px;
+  right: 19px;
+}
+
+.hole-3 {
+  right: 47px;
+  bottom: 20px;
+}
+
+.hole-4 {
+  left: 45px;
+  bottom: 21px;
+}
+
+.hole-5 {
+  top: 69px;
+  left: 18px;
+}
+
+.reel-center {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 50%;
+  left: 50%;
+
+  width: 44px;
+  height: 44px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #77736b 0 17%,
+      #252522 19% 42%,
+      #55524c 44% 100%
+    );
+
+  border: 2px solid #161614;
+}
+
+
+/* ========================================
+   FILMOVÝ PÁS
+======================================== */
+
+.film-tail {
+  position: absolute;
+
+  z-index: 2;
+
+  right: 112px;
+  bottom: 17px;
+
+  width: 205px;
+  height: 42px;
+
+  padding: 6px 8px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  background: #242320;
+
+  border-radius: 6px 0 0 6px;
+
+  box-shadow:
+    0 8px 18px rgba(40,35,28,0.13);
+
+  transform:
+    rotate(7deg)
+    skewX(-7deg);
+
+  transform-origin: right center;
+}
+
+.film-tail::before,
+.film-tail::after {
+  content: "";
+
+  position: absolute;
+
+  left: 5px;
+  right: 5px;
+
+  height: 4px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #f7f5f1 0 6px,
+      transparent 6px 12px
+    );
+
+  opacity: 0.8;
+}
+
+.film-tail::before {
+  top: 2px;
+}
+
+.film-tail::after {
+  bottom: 2px;
+}
+
+.film-tail span {
+  flex: 1;
+
+  height: 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #5d574e,
+      #35332e
+    );
+
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+
+/* ========================================
+   BUILDER
+======================================== */
+
+.builder {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    300px;
+
+  gap: 28px;
+
+  align-items: start;
+}
+
+.collection-section {
+  min-width: 0;
+}
+
+.collection-heading {
+  min-height: 38px;
+
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.collection-heading h2 {
+  margin: 0;
+
+  font-size: 19px;
+}
+
+#movieCount {
+  padding: 6px 10px;
+
+  border: 1px solid #d8d2c9;
+  border-radius: 8px;
+
+  background: white;
+
+  color: #625d56;
+
+  font-size: 12px;
+}
+
+
+/* ========================================
+   FILMOVÁ DEVÍTKA
+======================================== */
+
+.film-grid {
+  width: 100%;
+
+  padding: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+
+  gap: 10px;
+
+  background: #efebe4;
+
+  border: 1px solid #ddd7ce;
+  border-radius: 20px;
+}
+
+.film-box {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  aspect-ratio: 2 / 3;
+
+  padding: 13px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #f7f4ee;
+
+  border: 1.5px dashed #b9b2a8;
+  border-radius: 10px;
+}
+
+.film-box > span {
+  align-self: flex-start;
+
+  color: #777168;
+
+  font-size: 9px;
+}
+
+.film-box > p {
+  margin: 0;
+
+  color: #625d56;
+
+  font-size: 12px;
+}
+
+.film-box > button {
+  width: 42px;
+  height: 42px;
+
+  border: 1.5px solid #c9c3b9;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #6b665f;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.film-box > img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.film-box:has(> img) {
+  padding: 0;
+
+  background: #1c1b19;
+
+  border-style: solid;
+  border-color: transparent;
+
+  cursor: grab;
+}
+
+.selected-movie-controls {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 42px 6px 8px;
+
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,0.9)
+    );
+
+  color: white;
+
+  text-align: center;
+}
+
+.selected-movie-controls strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  overflow: hidden;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.selected-movie-controls button {
+  padding: 1px 5px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: rgba(255,255,255,0.82);
+
+  font-size: 9px;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   PANEL
+======================================== */
+
+.poster-settings {
+  position: sticky;
+  top: 24px;
+
+  margin-top: 53px;
+
+  padding: 22px;
+
+  background: white;
+
+  border: 1px solid #e2ddd5;
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 30px rgba(30,25,20,0.06);
+}
+
+.poster-settings > h2 {
+  margin: 0 0 26px;
+}
+
+.setting-group {
+  margin-bottom: 25px;
+}
+
+.setting-label {
+  margin-bottom: 8px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting-label label,
+.setting-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.setting-label span {
+  color: #8a847c;
+
+  font-size: 10px;
+}
+
+.setting-title {
+  margin: 0 0 12px;
+}
+
+#posterName {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d9d3ca;
+  border-radius: 11px;
+
+  background: #f5f2ec;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   MOTIVY
+======================================== */
+
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 13px 8px;
+}
+
+.theme-option {
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.theme-preview {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1.2 / 1;
+
+  margin-bottom: 6px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 9px;
+}
+
+.theme-option small {
+  display: block;
+
+  color: #777168;
+
+  font-size: 9px;
+}
+
+.theme-option.active .theme-preview {
+  outline: 2px solid #1c1b19;
+  outline-offset: 2px;
+}
+
+.theme-icon {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.theme-preview.cinema {
+  background:
+    radial-gradient(circle at 50% 20%, #443c30, #171614 65%);
+
+  color: #f3e6bc;
+}
+
+.theme-preview.filmstrip {
+  background: #dfcfaa;
+
+  color: #29251f;
+}
+
+.theme-preview.vhs {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #24262b 0 3px,
+      #303239 3px 4px
+    );
+
+  color: white;
+}
+
+.theme-preview.redcarpet {
+  background:
+    radial-gradient(circle at top, #a1373f, #53191f);
+
+  color: #f4d99c;
+}
+
+.theme-preview.midnight {
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      #4857a8,
+      #191c3d 45%,
+      #0d1024 80%
+    );
+
+  color: #e0e4ff;
+}
+
+.theme-preview.popcorn {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #f3bd45 0 12px,
+      #ef9143 12px 24px
+    );
+
+  color: #8d2525;
+}
+
+
+/* ========================================
+   STATUS + BUTTON
+======================================== */
+
+.poster-status {
+  padding: 16px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid #eee9e2;
+
+  color: #777168;
+
+  font-size: 10px;
+}
+
+#createPosterButton {
+  width: 100%;
+  min-height: 50px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: #1c1b19;
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   MOVIE PICKER
+======================================== */
+
+.overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  background: rgba(28,27,25,0.45);
+
+  backdrop-filter: blur(7px);
+}
+
+.movie-picker {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+
+  width: calc(100% - 40px);
+  max-width: 560px;
+  max-height: calc(100vh - 40px);
+
+  padding: 26px;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 22px;
+}
+
+.picker-top,
+.picker-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-top {
+  margin-bottom: 22px;
+}
+
+#closePicker {
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+#movieSearch {
+  width: 100%;
+  height: 54px;
+
+  padding: 0 17px;
+
+  border: 1.5px solid #aaa399;
+  border-radius: 13px;
+
+  font-size: 16px;
+}
+
+.movie-results {
+  margin-top: 17px;
+}
+
+.movie-result {
+  padding: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+}
+
+.movie-result-info {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.movie-result-info img,
+.no-poster {
+  width: 50px;
+  height: 72px;
+
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+.movie-result-info strong,
+.movie-result-info span {
+  display: block;
+}
+
+.movie-result-info span {
+  color: #777168;
+
+  font-size: 12px;
+}
+
+.add-movie {
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f1eee8;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.picker-bottom {
+  margin-top: 20px;
+  padding-top: 16px;
+
+  border-top: 1px solid #eee9e2;
+}
+
+#doneButton {
+  padding: 10px 17px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #1c1b19;
+  color: white;
+}
+
+
+/* ========================================
+   NOVÝ POSTER MODAL
+======================================== */
+
+.poster-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 2000;
+
+  padding: 18px;
+
+  overflow: hidden;
+
+  background: rgba(15,15,15,0.72);
+
+  backdrop-filter: blur(10px);
+}
+
+.poster-modal {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+#closePoster {
+  position: fixed;
+
+  z-index: 3000;
+
+  top: 20px;
+  right: 20px;
+
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: white;
+  color: #1c1b19;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.18);
+}
+
+
+/* ========================================
+   SAMOTNÝ PLAKÁT
+======================================== */
+
+.poster-preview {
+  position: relative;
+
+  width: 500px;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  flex-shrink: 0;
+
+  transform-origin: center center;
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.42);
+}
+
+.poster-label {
+  position: relative;
+
+  z-index: 3;
+
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+.poster-preview h2 {
+  position: relative;
+
+  z-index: 3;
+
+  margin: 7px 40px 25px;
+
+  text-align: center;
+
+  font-size: 26px;
+}
+
+.poster-grid {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 13px 8px;
+}
+
+.poster-movie {
+  min-width: 0;
+}
+
+.poster-movie img,
+.poster-empty {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 2 / 3;
+
+  object-fit: cover;
+}
+
+.poster-movie-info {
+  padding-top: 6px;
+}
+
+.poster-movie-info strong {
+  display: block;
+
+  overflow: hidden;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.poster-movie-info span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 9px;
+}
+
+.poster-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed currentColor;
+
+  opacity: 0.5;
+}
+
+.poster-footer {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 20px;
+  padding-top: 11px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 8px;
+}
+
+
+/* ========================================
+   CINEMA
+======================================== */
+
+.poster-theme-cinema {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #514534,
+      #25211c 30%,
+      #11100f 70%
+    );
+
+  color: #fff8e8;
+}
+
+.poster-theme-cinema .poster-label {
+  color: #d2b77d;
+}
+
+.poster-theme-cinema .poster-movie img {
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.55);
+}
+
+.poster-theme-cinema .poster-movie-info span {
+  color: #b7aa96;
+}
+
+.poster-theme-cinema .poster-footer {
+  border-top:
+    1px solid rgba(255,239,196,0.15);
+
+  color: #a99b83;
+}
+
+
+/* ========================================
+   FILM STRIP
+======================================== */
+
+.poster-theme-filmstrip {
+  padding-left: 48px;
+  padding-right: 48px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #f8efd9,
+      #dbc79d
+    );
+
+  color: #2c261d;
+}
+
+.poster-theme-filmstrip::before,
+.poster-theme-filmstrip::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0;
+  bottom: 0;
+
+  width: 24px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #302a22 0 10px,
+      transparent 10px 17px
+    );
+
+  border-left: 4px solid #302a22;
+  border-right: 4px solid #302a22;
+}
+
+.poster-theme-filmstrip::before {
+  left: 10px;
+}
+
+.poster-theme-filmstrip::after {
+  right: 10px;
+}
+
+.poster-theme-filmstrip h2,
+.poster-theme-filmstrip .poster-movie-info strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+.poster-theme-filmstrip .poster-label {
+  color: #7d6540;
+}
+
+.poster-theme-filmstrip .poster-movie img {
+  border: 3px solid #f8efd9;
+
+  filter:
+    saturate(0.9)
+    contrast(0.97);
+}
+
+.poster-theme-filmstrip .poster-movie-info span {
+  color: #79684d;
+}
+
+.poster-theme-filmstrip .poster-footer {
+  border-top:
+    1px solid rgba(70,50,25,0.25);
+
+  color: #766344;
+}
+
+
+/* ========================================
+   VHS
+======================================== */
+
+.poster-theme-vhs {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #15171b 0,
+      #15171b 3px,
+      #1c1f25 3px,
+      #1c1f25 4px
+    );
+
+  color: #f4f4f4;
+
+  font-family:
+    "Courier New",
+    monospace;
+}
+
+.poster-theme-vhs::before {
+  content: "● REC";
+
+  position: absolute;
+
+  z-index: 4;
+
+  top: 19px;
+  left: 20px;
+
+  color: #ff4e62;
+
+  font-size: 10px;
+}
+
+.poster-theme-vhs::after {
+  content: "SP  00:09:98";
+
+  position: absolute;
+
+  z-index: 4;
+
+  right: 20px;
+  bottom: 16px;
+
+  color: rgba(255,255,255,0.7);
+
+  font-size: 8px;
+}
+
+.poster-theme-vhs .poster-label {
+  color: #7fd9ff;
+
+  text-shadow:
+    2px 0 #ff426d,
+    -2px 0 #54dfff;
+}
+
+.poster-theme-vhs h2 {
+  text-transform: uppercase;
+}
+
+.poster-theme-vhs .poster-movie img {
+  border: 1px solid #4b4e55;
+
+  filter:
+    contrast(1.05)
+    saturate(0.75);
+}
+
+.poster-theme-vhs .poster-movie-info span {
+  color: #9ca3ad;
+}
+
+.poster-theme-vhs .poster-footer {
+  border-top: 1px solid #40434a;
+
+  color: #aab0b8;
+}
+
+
+/* ========================================
+   RED CARPET
+======================================== */
+
+.poster-theme-redcarpet {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #b34b51,
+      #6d1d27 38%,
+      #310c13 100%
+    );
+
+  color: #fff4dc;
+}
+
+.poster-theme-redcarpet::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border:
+    1px solid rgba(242,205,135,0.35);
+}
+
+.poster-theme-redcarpet .poster-label {
+  color: #eacb87;
+}
+
+.poster-theme-redcarpet h2 {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+}
+
+.poster-theme-redcarpet .poster-movie img {
+  border: 1px solid #d7ad62;
+}
+
+.poster-theme-redcarpet .poster-movie-info span {
+  color: #d6b98c;
+}
+
+.poster-theme-redcarpet .poster-footer {
+  border-top:
+    1px solid rgba(238,204,137,0.3);
+
+  color: #d7bd8b;
+}
+
+
+/* ========================================
+   MIDNIGHT
+======================================== */
+
+.poster-theme-midnight {
+  background:
+    radial-gradient(
+      circle at 80% 5%,
+      #4957a7,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 10% 50%,
+      #321d65,
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #10142f,
+      #080a1c
+    );
+
+  color: #f2f3ff;
+}
+
+.poster-theme-midnight::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      white 1px,
+      transparent 1px
+    );
+
+  background-size:
+    37px 37px;
+
+  opacity: 0.12;
+}
+
+.poster-theme-midnight .poster-label {
+  color: #b9c4ff;
+}
+
+.poster-theme-midnight .poster-movie img {
+  border:
+    1px solid rgba(188,199,255,0.4);
+}
+
+.poster-theme-midnight .poster-movie-info span {
+  color: #aeb5d7;
+}
+
+.poster-theme-midnight .poster-footer {
+  border-top:
+    1px solid rgba(185,196,255,0.2);
+
+  color: #aab2d8;
+}
+
+
+/* ========================================
+   POPCORN
+======================================== */
+
+.poster-theme-popcorn {
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      #fff1a9,
+      #f4c64f 55%,
+      #ec9b3e 100%
+    );
+
+  color: #7a2225;
+}
+
+.poster-theme-popcorn::before {
+  content: "★  ★  ★";
+
+  position: absolute;
+
+  top: 17px;
+  left: 20px;
+
+  color: rgba(174,43,44,0.35);
+
+  font-size: 10px;
+}
+
+.poster-theme-popcorn::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 13px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b93232 0 20px,
+      #fff0c4 20px 40px
+    );
+}
+
+.poster-theme-popcorn .poster-label {
+  color: #ad2e30;
+}
+
+.poster-theme-popcorn h2 {
+  text-transform: uppercase;
+
+  font-weight: 900;
+}
+
+.poster-theme-popcorn .poster-movie img {
+  border: 3px solid #fff0c4;
+}
+
+.poster-theme-popcorn .poster-movie-info span {
+  color: #a14b2c;
+}
+
+.poster-theme-popcorn .poster-footer {
+  margin-bottom: 10px;
+
+  border-top:
+    1px solid rgba(125,35,35,0.25);
+
+  color: #8b3430;
+}
+
+
+/* ========================================
+   STAŽENÍ
+======================================== */
+
+.poster-actions {
+  width: min(100%, 500px);
+
+  flex-shrink: 0;
+}
+
+#downloadPosterButton {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: white;
+  color: #1c1b19;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.2);
+}
+
+#downloadPosterButton:disabled {
+  opacity: 0.6;
+
+  cursor: wait;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 950px) {
+
+  .page {
+    width: calc(100% - 32px);
+  }
+
+  .builder {
+    grid-template-columns:
+      minmax(0,1fr)
+      250px;
+
+    gap: 16px;
+  }
+
+}
+
+
+@media (max-width: 760px) {
+
+  .page {
+    width: calc(100% - 28px);
+  }
+
+  .hero {
+    min-height: 0;
+
+    padding: 45px 0 35px;
+
+    display: block;
+  }
+
+  .hero-text h1 {
+    font-size: 43px;
+  }
+
+  .reel-scene {
+    width: 230px;
+    height: 195px;
+
+    margin:
+      30px
+      0
+      0
+      auto;
+
+    transform: scale(0.82);
+
+    transform-origin: right top;
+  }
+
+  .builder {
+    display: block;
+  }
+
+  .poster-settings {
+    position: static;
+
+    margin-top: 22px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .page {
+    width: calc(100% - 20px);
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .film-grid {
+    padding: 6px;
+
+    gap: 4px;
+  }
+
+  .poster-overlay {
+    padding: 10px;
+  }
+
+  #closePoster {
+    top: 10px;
+    right: 10px;
+  }
+
+}
+/* ========================================
+   NOVÉ OKNO VÝSLEDNÉHO PLAKÁTU
+======================================== */
+
+.poster-overlay {
+  padding: 24px;
+
+  overflow-y: auto;
+
+  background: rgba(25, 24, 22, 0.68);
+
+  backdrop-filter: blur(12px);
+}
+
+
+/* ========================================
+   BÍLÉ OKNO
+======================================== */
+
+.poster-result-modal {
+  width: min(100%, 610px);
+
+  margin: 20px auto;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    rgba(0, 0, 0, 0.08);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.28);
+}
+
+
+/* ========================================
+   HLAVIČKA
+======================================== */
+
+.poster-result-header {
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.poster-result-header h2 {
+  margin: 0;
+
+  color: #1c1b19;
+
+  font-size: 21px;
+  letter-spacing: -0.5px;
+}
+
+
+/* X */
+
+.poster-result-header #closePoster {
+  position: static;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f1eee8;
+  color: #625d56;
+
+  box-shadow: none;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.poster-result-header #closePoster:hover {
+  background: #e8e4dd;
+}
+
+
+/* ========================================
+   PLOCHA KOLEM PLAKÁTU
+======================================== */
+
+.poster-result-stage {
+  width: 100%;
+
+  padding: 16px;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f4f1eb;
+
+  border: 1px solid #ddd7ce;
+  border-radius: 15px;
+}
+
+
+/*
+  Samotný plakát má pořád svoji
+  skutečnou velikost. JS ho podle
+  obrazovky zmenšuje pomocí scale.
+*/
+
+.poster-result-stage .poster-preview {
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   HLAVNÍ TLAČÍTKA
+======================================== */
+
+.poster-main-actions {
+  margin-top: 16px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+
+.poster-main-actions button {
+  min-height: 49px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+
+.poster-main-actions button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* SDÍLET */
+
+.poster-action-primary {
+  border: 1px solid #1c1b19;
+
+  background: #1c1b19;
+  color: #ffffff;
+}
+
+
+/* STÁHNOUT */
+
+.poster-action-secondary {
+  border: 1px solid #d8d2c9;
+
+  background: #ffffff;
+  color: #1c1b19;
+}
+
+
+.poster-action-secondary:hover {
+  background: #f7f5f1;
+}
+
+
+/* při vytváření PNG */
+
+#downloadPosterButton:disabled {
+  opacity: 0.55;
+
+  cursor: wait;
+
+  transform: none;
+}
+
+
+/* ========================================
+   MALÁ TLAČÍTKA
+======================================== */
+
+.poster-small-actions {
+  margin-top: 9px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 8px;
+}
+
+
+.poster-small-actions button {
+  min-width: 0;
+  min-height: 43px;
+
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: #f1eee8;
+  color: #37332e;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+.poster-small-actions button:hover {
+  background: #e9e5de;
+
+  transform: translateY(-1px);
+}
+
+
+.poster-small-actions button span {
+  flex-shrink: 0;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   MOBIL
+======================================== */
+
+@media (max-width: 620px) {
+
+  .poster-overlay {
+    padding: 10px;
+  }
+
+
+  .poster-result-modal {
+    margin: 5px auto;
+
+    padding: 16px;
+
+    border-radius: 19px;
+  }
+
+
+  .poster-result-stage {
+    padding: 10px;
+  }
+
+
+  .poster-main-actions {
+    grid-template-columns: 1fr;
+  }
+
+
+  .poster-small-actions {
+    grid-template-columns: 1fr;
+  }
+
+
+  .poster-small-actions button {
+    min-height: 42px;
+  }
+
+}
+/* ========================================
+   INSTAGRAM STORY 9:16
+======================================== */
+
+.story-export {
+  position: fixed;
+
+  left: -10000px;
+  top: 0;
+
+  width: 1080px;
+  height: 1920px;
+
+  padding: 120px 100px 90px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* NADPIS */
+
+.story-export .story-label {
+  position: relative;
+
+  z-index: 3;
+
+  margin: 0 0 20px;
+
+  text-align: center;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  letter-spacing: 8px;
+}
+
+
+.story-export .story-title {
+  position: relative;
+
+  z-index: 3;
+
+  margin: 0 0 75px;
+
+  text-align: center;
+
+  font-size: 58px;
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+}
+
+
+/* 3 × 3 FILMY */
+
+.story-export .story-grid {
+  position: relative;
+
+  z-index: 3;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px 20px;
+}
+
+
+.story-export .story-movie {
+  min-width: 0;
+}
+
+
+.story-export .story-movie img,
+.story-export .story-empty {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 2 / 3;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+
+.story-export .story-empty {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 2px dashed currentColor;
+
+  font-size: 24px;
+
+  opacity: 0.5;
+}
+
+
+/* NÁZEV FILMU */
+
+.story-export .story-movie-info {
+  padding-top: 12px;
+}
+
+
+.story-export .story-movie-info strong {
+  display: block;
+
+  overflow: hidden;
+
+  font-size: 19px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+.story-export .story-movie-info span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 16px;
+
+  opacity: 0.65;
+}
+
+
+/* SPODNÍ ČÁST */
+
+.story-export .story-footer {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: auto;
+  padding-top: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* ========================================
+   STORY — CINEMA
+======================================== */
+
+.story-export.poster-theme-cinema {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #514534,
+      #25211c 30%,
+      #11100f 70%
+    );
+
+  color: #fff8e8;
+}
+
+
+.story-export.poster-theme-cinema .story-label {
+  color: #d2b77d;
+}
+
+
+.story-export.poster-theme-cinema .story-movie img {
+  box-shadow:
+    0 18px 35px rgba(0,0,0,0.55);
+}
+
+
+.story-export.poster-theme-cinema .story-footer {
+  border-top:
+    1px solid rgba(255,239,196,0.15);
+
+  color: #a99b83;
+}
+
+
+/* ========================================
+   STORY — FILM STRIP
+======================================== */
+
+.story-export.poster-theme-filmstrip {
+  padding-left: 125px;
+  padding-right: 125px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #f8efd9,
+      #dbc79d
+    );
+
+  color: #2c261d;
+}
+
+
+.story-export.poster-theme-filmstrip::before,
+.story-export.poster-theme-filmstrip::after {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0;
+  bottom: 0;
+
+  width: 55px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #302a22 0 24px,
+      transparent 24px 42px
+    );
+
+  border-left: 9px solid #302a22;
+  border-right: 9px solid #302a22;
+}
+
+
+.story-export.poster-theme-filmstrip::before {
+  left: 25px;
+}
+
+
+.story-export.poster-theme-filmstrip::after {
+  right: 25px;
+}
+
+
+.story-export.poster-theme-filmstrip .story-title,
+.story-export.poster-theme-filmstrip .story-movie-info strong {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+
+.story-export.poster-theme-filmstrip .story-label {
+  color: #7d6540;
+}
+
+
+.story-export.poster-theme-filmstrip .story-movie img {
+  border: 6px solid #f8efd9;
+}
+
+
+.story-export.poster-theme-filmstrip .story-footer {
+  border-top:
+    2px solid rgba(70,50,25,0.25);
+
+  color: #766344;
+}
+
+
+/* ========================================
+   STORY — VHS
+======================================== */
+
+.story-export.poster-theme-vhs {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #15171b 0,
+      #15171b 6px,
+      #1c1f25 6px,
+      #1c1f25 8px
+    );
+
+  color: #f4f4f4;
+
+  font-family:
+    "Courier New",
+    monospace;
+}
+
+
+.story-export.poster-theme-vhs::before {
+  content: "● REC";
+
+  position: absolute;
+
+  z-index: 4;
+
+  top: 50px;
+  left: 55px;
+
+  color: #ff4e62;
+
+  font-size: 23px;
+}
+
+
+.story-export.poster-theme-vhs::after {
+  content: "SP  00:09:98";
+
+  position: absolute;
+
+  z-index: 4;
+
+  right: 55px;
+  bottom: 45px;
+
+  color: rgba(255,255,255,0.7);
+
+  font-size: 20px;
+}
+
+
+.story-export.poster-theme-vhs .story-label {
+  color: #7fd9ff;
+
+  text-shadow:
+    4px 0 #ff426d,
+    -4px 0 #54dfff;
+}
+
+
+.story-export.poster-theme-vhs .story-title {
+  text-transform: uppercase;
+}
+
+
+.story-export.poster-theme-vhs .story-movie img {
+  border: 2px solid #4b4e55;
+
+  filter:
+    contrast(1.05)
+    saturate(0.75);
+}
+
+
+.story-export.poster-theme-vhs .story-footer {
+  border-top: 2px solid #40434a;
+
+  color: #aab0b8;
+}
+
+
+/* ========================================
+   STORY — RED CARPET
+======================================== */
+
+.story-export.poster-theme-redcarpet {
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      #b34b51,
+      #6d1d27 38%,
+      #310c13 100%
+    );
+
+  color: #fff4dc;
+}
+
+
+.story-export.poster-theme-redcarpet::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 30px;
+
+  border:
+    2px solid rgba(242,205,135,0.35);
+}
+
+
+.story-export.poster-theme-redcarpet .story-label {
+  color: #eacb87;
+}
+
+
+.story-export.poster-theme-redcarpet .story-title {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+}
+
+
+.story-export.poster-theme-redcarpet .story-movie img {
+  border: 3px solid #d7ad62;
+}
+
+
+.story-export.poster-theme-redcarpet .story-footer {
+  border-top:
+    2px solid rgba(238,204,137,0.3);
+
+  color: #d7bd8b;
+}
+
+
+/* ========================================
+   STORY — MIDNIGHT
+======================================== */
+
+.story-export.poster-theme-midnight {
+  background:
+    radial-gradient(
+      circle at 80% 5%,
+      #4957a7,
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 10% 50%,
+      #321d65,
+      transparent 30%
+    ),
+
+    linear-gradient(
+      145deg,
+      #10142f,
+      #080a1c
+    );
+
+  color: #f2f3ff;
+}
+
+
+.story-export.poster-theme-midnight::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    radial-gradient(
+      white 2px,
+      transparent 2px
+    );
+
+  background-size:
+    80px 80px;
+
+  opacity: 0.12;
+}
+
+
+.story-export.poster-theme-midnight .story-label {
+  color: #b9c4ff;
+}
+
+
+.story-export.poster-theme-midnight .story-movie img {
+  border:
+    2px solid rgba(188,199,255,0.4);
+}
+
+
+.story-export.poster-theme-midnight .story-footer {
+  border-top:
+    2px solid rgba(185,196,255,0.2);
+
+  color: #aab2d8;
+}
+
+
+/* ========================================
+   STORY — POPCORN
+======================================== */
+
+.story-export.poster-theme-popcorn {
+  background:
+    radial-gradient(
+      circle at 50% 10%,
+      #fff1a9,
+      #f4c64f 55%,
+      #ec9b3e 100%
+    );
+
+  color: #7a2225;
+}
+
+
+.story-export.poster-theme-popcorn::before {
+  content: "★  ★  ★";
+
+  position: absolute;
+
+  top: 50px;
+  left: 55px;
+
+  color: rgba(174,43,44,0.35);
+
+  font-size: 25px;
+}
+
+
+.story-export.poster-theme-popcorn::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 30px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #b93232 0 45px,
+      #fff0c4 45px 90px
+    );
+}
+
+
+.story-export.poster-theme-popcorn .story-label {
+  color: #ad2e30;
+}
+
+
+.story-export.poster-theme-popcorn .story-title {
+  text-transform: uppercase;
+
+  font-weight: 900;
+}
+
+
+.story-export.poster-theme-popcorn .story-movie img {
+  border: 6px solid #fff0c4;
+}
+
+
+.story-export.poster-theme-popcorn .story-footer {
+  margin-bottom: 25px;
+
+  border-top:
+    2px solid rgba(125,35,35,0.25);
+
+  color: #8b3430;
+}
+/* Story zatím nepoužíváme */
+#storyButton {
+  display: none;
+}
+.poster-small-actions {
+  grid-template-columns: repeat(2, 1fr);
+}

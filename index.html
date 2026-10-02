@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Moje devítka</title>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <!-- ========================================
+         HLAVIČKA
+    ========================================= -->
+
+    <header class="site-header">
+
+      <div class="site-logo">
+        mojedevitka
+      </div>
+
+      <div class="site-credit">
+        by bikinka
+      </div>
+
+    </header>
+
+
+    <!-- ========================================
+         HERO
+    ========================================= -->
+
+    <section class="hero">
+
+      <div class="hero-text">
+
+        <h1>
+          Tvoje filmová devítka.
+        </h1>
+
+        <p>
+          Vyber 9 filmů, které máš nejradši,
+          seřaď je a vytvoř si vlastní plakát.
+        </p>
+
+      </div>
+
+
+      <!-- FILMOVÁ CÍVKA -->
+
+      <div class="reel-scene">
+
+        <div class="film-reel">
+
+          <div class="reel-hole hole-1"></div>
+          <div class="reel-hole hole-2"></div>
+          <div class="reel-hole hole-3"></div>
+          <div class="reel-hole hole-4"></div>
+          <div class="reel-hole hole-5"></div>
+
+          <div class="reel-center"></div>
+
+        </div>
+
+
+        <div class="film-tail">
+
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         BUILDER
+    ========================================= -->
+
+    <main class="builder">
+
+
+      <!-- KOLEKCE -->
+
+      <section class="collection-section">
+
+        <div class="collection-heading">
+
+          <h2>
+            Tvoje kolekce
+          </h2>
+
+          <span id="movieCount">
+            0/9
+          </span>
+
+        </div>
+
+
+        <div class="film-grid">
+
+          <div class="film-box">
+            <span>01</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>02</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>03</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>04</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>05</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>06</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>07</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>08</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+          <div class="film-box">
+            <span>09</span>
+            <button>+</button>
+            <p>Vybrat film</p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ========================================
+           PANEL PLAKÁTU
+      ========================================= -->
+
+      <aside class="poster-settings">
+
+        <h2>
+          Plakát
+        </h2>
+
+
+        <!-- JMÉNO -->
+
+        <div class="setting-group">
+
+          <div class="setting-label">
+
+            <label for="posterName">
+              Jméno nebo @handle
+            </label>
+
+            <span>
+              Volitelné
+            </span>
+
+          </div>
+
+
+          <input
+            type="text"
+            id="posterName"
+            placeholder="@bikinka"
+            maxlength="30"
+          >
+
+        </div>
+
+
+        <!-- MOTIVY -->
+
+        <div class="setting-group">
+
+          <p class="setting-title">
+            Motiv plakátu
+          </p>
+
+
+          <div class="theme-options">
+
+
+            <!-- CINEMA -->
+
+            <button
+              class="theme-option active"
+              type="button"
+              data-theme="cinema"
+            >
+
+              <span class="theme-preview cinema">
+                <span class="theme-icon">
+                  ◉
+                </span>
+              </span>
+
+              <small>
+                Cinema
+              </small>
+
+            </button>
+
+
+            <!-- FILM STRIP -->
+
+            <button
+              class="theme-option"
+              type="button"
+              data-theme="filmstrip"
+            >
+
+              <span class="theme-preview filmstrip">
+                <span class="theme-icon">
+                  ▦
+                </span>
+              </span>
+
+              <small>
+                Film Strip
+              </small>
+
+            </button>
+
+
+            <!-- VHS -->
+
+            <button
+              class="theme-option"
+              type="button"
+              data-theme="vhs"
+            >
+
+              <span class="theme-preview vhs">
+                <span class="theme-icon">
+                  REC
+                </span>
+              </span>
+
+              <small>
+                VHS
+              </small>
+
+            </button>
+
+
+            <!-- RED CARPET -->
+
+            <button
+              class="theme-option"
+              type="button"
+              data-theme="redcarpet"
+            >
+
+              <span class="theme-preview redcarpet">
+                <span class="theme-icon">
+                  ★
+                </span>
+              </span>
+
+              <small>
+                Red Carpet
+              </small>
+
+            </button>
+
+
+            <!-- MIDNIGHT -->
+
+            <button
+              class="theme-option"
+              type="button"
+              data-theme="midnight"
+            >
+
+              <span class="theme-preview midnight">
+                <span class="theme-icon">
+                  ✦
+                </span>
+              </span>
+
+              <small>
+                Midnight
+              </small>
+
+            </button>
+
+
+            <!-- POPCORN -->
+
+            <button
+              class="theme-option"
+              type="button"
+              data-theme="popcorn"
+            >
+
+              <span class="theme-preview popcorn">
+                <span class="theme-icon">
+                  POP
+                </span>
+              </span>
+
+              <small>
+                Popcorn
+              </small>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- STAV -->
+
+        <div class="poster-status">
+
+          <span>
+            Tvoje filmová devítka
+          </span>
+
+          <strong id="posterCount">
+            0 filmů
+          </strong>
+
+        </div>
+
+
+        <!-- VYTVOŘIT PLAKÁT -->
+
+        <button id="createPosterButton">
+
+          <span>
+            Vytvořit plakát
+          </span>
+
+          <span>
+            →
+          </span>
+
+        </button>
+
+      </aside>
+
+    </main>
+
+  </div>
+
+
+  <!-- ========================================
+       VÝBĚR FILMU
+  ========================================= -->
+
+  <div
+    class="overlay"
+    id="overlay"
+  >
+
+    <div class="movie-picker">
+
+      <div class="picker-top">
+
+        <span id="slotNumber">
+          POZICE 01 Z 09
+        </span>
+
+        <button id="closePicker">
+          ×
+        </button>
+
+      </div>
+
+
+      <h2>
+        Vyber film
+      </h2>
+
+
+      <input
+        type="text"
+        id="movieSearch"
+        placeholder="Název filmu..."
+      >
+
+
+      <p>
+        Hledej podle názvu filmu.
+      </p>
+
+
+      <div
+        class="movie-results"
+        id="movieResults"
+      ></div>
+
+
+      <div class="picker-bottom">
+
+        <span>
+          Vyber film pro tuto pozici
+        </span>
+
+        <button id="doneButton">
+          Hotovo
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================
+       VÝSLEDNÝ PLAKÁT
+  ========================================= -->
+
+  <div
+    class="poster-overlay"
+    id="posterOverlay"
+  >
+
+    <div class="poster-result-modal">
+
+
+      <!-- HLAVIČKA -->
+
+      <div class="poster-result-header">
+
+        <h2>
+          Tvůj plakát
+        </h2>
+
+        <button
+          id="closePoster"
+          type="button"
+          aria-label="Zavřít"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <!-- RÁMEČEK S PLAKÁTEM -->
+
+      <div class="poster-result-stage">
+
+        <!-- SAMOTNÝ PLAKÁT -->
+
+        <div
+          class="poster-preview"
+          id="posterPreview"
+        >
+
+          <div class="poster-decoration"></div>
+
+
+          <p class="poster-label">
+            MOJEDEVITKA
+          </p>
+
+
+          <h2>
+            Tvoje filmová devítka.
+          </h2>
+
+
+          <div
+            class="poster-grid"
+            id="posterGrid"
+          ></div>
+
+
+          <div class="poster-footer">
+
+            <span>
+              mojedevitka
+            </span>
+
+            <span>
+              01—09 · by bikinka
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================================
+           HLAVNÍ TLAČÍTKA
+      ========================================= -->
+
+      <div class="poster-main-actions">
+
+
+        <!-- SDÍLET -->
+
+        <button
+          class="poster-action-primary"
+          id="sharePosterButton"
+          type="button"
+        >
+
+          <span>
+            ⌯
+          </span>
+
+          <strong>
+            Sdílet
+          </strong>
+
+        </button>
+
+
+        <!-- STÁHNOUT -->
+
+        <button
+          class="poster-action-secondary"
+          id="downloadPosterButton"
+          type="button"
+        >
+
+          <span>
+            ↓
+          </span>
+
+          <strong>
+            Stáhnout plakát
+          </strong>
+
+        </button>
+
+      </div>
+
+
+      <!-- ========================================
+           MENŠÍ TLAČÍTKA
+      ========================================= -->
+
+      <div class="poster-small-actions">
+
+
+        <!-- STORY -->
+
+        <button
+          id="storyButton"
+          type="button"
+        >
+
+          <span>
+            ▯
+          </span>
+
+          Story
+
+        </button>
+
+
+        <!-- X -->
+
+        <button
+          id="xButton"
+          type="button"
+        >
+
+          <span>
+            𝕏
+          </span>
+
+          Sdílet na X
+
+        </button>
+
+
+        <!-- KOPÍROVAT ODKAZ -->
+
+        <button
+          id="copyLinkButton"
+          type="button"
+        >
+
+          <span>
+            ↗
+          </span>
+
+          Kopírovat odkaz
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================
+       KNIHOVNA PRO STAŽENÍ PLAKÁTU
+  ========================================= -->
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+  ></script>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
